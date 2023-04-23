@@ -17,9 +17,17 @@ public class OperationTest {
     }
 
     @Test
-    @DisplayName("달러가 같은 달러인지")
+    @DisplayName("달러가 같은 달러인지(동치성)")
     public void testEquality() {
         assertEquals(new Dollar(5), new Dollar(5));
         assertNotEquals(new Dollar(5), new Dollar(6));
+    }
+
+    @Test
+    @DisplayName("프랑을 곱한 금액을 결과로 얻을 수 있어야 한다.")
+    public void testFrancMultiplication() {
+        Franc five = new Franc(5);
+        assertEquals(new Franc(10), five.times(2));
+        assertEquals(new Franc(15), five.times(3));
     }
 }

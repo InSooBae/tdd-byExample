@@ -17,10 +17,13 @@ public class OperationTest {
     }
 
     @Test
-    @DisplayName("달러가 같은 달러인지(동치성)")
+    @DisplayName("돈(금액)이 같은 돈(금액)인지(동치성)")
     public void testEquality() {
         assertEquals(new Dollar(5), new Dollar(5));
         assertNotEquals(new Dollar(5), new Dollar(6));
+        assertEquals(new Franc(5), new Franc(5));
+        assertNotEquals(new Franc(5), new Franc(6));
+        assertNotEquals(new Dollar(5), new Franc(5));
     }
 
     @Test

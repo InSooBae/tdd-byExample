@@ -40,4 +40,10 @@ public class OperationTest {
         assertEquals("USD", Money.dollar(1).currency());
         assertEquals("CHF", Money.franc(1).currency());
     }
+
+    @Test
+    @DisplayName("클래스가 달라도 amount와 currency가 같으면 같은 통화로 인식해야함")
+    public void testDifferentClassEquality() {
+        assertEquals(new Money(10, "CHF"), Money.franc(10));
+    }
 }

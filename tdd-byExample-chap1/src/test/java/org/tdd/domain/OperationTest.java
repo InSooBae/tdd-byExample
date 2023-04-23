@@ -21,18 +21,9 @@ public class OperationTest {
     public void testEquality() {
         assertEquals(Money.dollar(5), Money.dollar(5));
         assertNotEquals(Money.dollar(5), Money.dollar(6));
-        assertEquals(Money.franc(5), Money.franc(5));
-        assertNotEquals(Money.franc(5), Money.franc(6));
         assertNotEquals(Money.dollar(5), Money.franc(5));
     }
 
-    @Test
-    @DisplayName("프랑을 곱한 금액을 결과로 얻을 수 있어야 한다.")
-    public void testFrancMultiplication() {
-        Money five = Money.franc(5);
-        assertEquals(Money.franc(10), five.times(2));
-        assertEquals(Money.franc(15), five.times(3));
-    }
 
     @Test
     @DisplayName("같은 통화(currency)인지 확인")
@@ -41,9 +32,4 @@ public class OperationTest {
         assertEquals("CHF", Money.franc(1).currency());
     }
 
-    @Test
-    @DisplayName("클래스가 달라도 amount와 currency가 같으면 같은 통화로 인식해야함")
-    public void testDifferentClassEquality() {
-        assertEquals(new Money(10, "CHF"), Money.franc(10));
-    }
 }

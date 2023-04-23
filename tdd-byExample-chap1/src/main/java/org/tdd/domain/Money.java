@@ -11,12 +11,12 @@ public class Money {
         this.currency = currency;
     }
 
-    public static Dollar dollar(int amount) {
-        return new Dollar(amount, "USD");
+    public static Money dollar(int amount) {
+        return new Money(amount, "USD");
     }
 
     public static Money franc(int amount) {
-        return new Franc(amount, "CHF");
+        return new Money(amount, "CHF");
     }
 
     public Money times(int multiplier) {
@@ -31,7 +31,7 @@ public class Money {
     public boolean equals(Object o) {
         Money money = (Money) o;
         return amount == money.amount
-                && currency.equals(money.currency());
+                && currency().equals(money.currency());
     }
 
     @Override

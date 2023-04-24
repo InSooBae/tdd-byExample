@@ -2,7 +2,7 @@ package org.tdd.domain;
 
 import java.util.Objects;
 
-public class Money {
+public class Money implements Expression {
     protected int amount;
     protected String currency;
 
@@ -25,7 +25,7 @@ public class Money {
 
     public String currency() {
         return currency;
-    };
+    }
 
     @Override
     public boolean equals(Object o) {
@@ -40,5 +40,9 @@ public class Money {
                 "amount=" + amount +
                 ", currency='" + currency + '\'' +
                 '}';
+    }
+
+    public Expression plus(Money money) {
+        return new Money(this.amount + money.amount, currency);
     }
 }

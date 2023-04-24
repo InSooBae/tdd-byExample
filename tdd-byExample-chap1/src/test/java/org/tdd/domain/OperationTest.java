@@ -43,6 +43,7 @@ public class OperationTest {
     }
 
     @Test
+    @DisplayName("더하기시 Sum 객체 리턴하는지")
     public void testPlusReturnSum() {
         Money five = Money.dollar(5);
         Expression result = five.plus(five);
@@ -52,9 +53,23 @@ public class OperationTest {
     }
 
     @Test
+    @DisplayName("reduce메서드 Sum 이외에도 동작이 잘 되는지")
     public void testReduceMoney() {
         Bank bank = new Bank();
         Money result = bank.reduce(Money.dollar(1), "USD");
         assertEquals(Money.dollar(1), result);
+    }
+
+    @Test
+    public void testReduceMoneyDifferentCurrency() {
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(Money.franc(2), "USD");
+        assertEquals(Money.dollar(1), result);
+    }
+
+    @Test
+    public void testIdentityRate() {
+        assertEquals(1, new Bank().rate("USD", "USD"));
     }
 }

@@ -1,7 +1,5 @@
 package org.tdd.domain;
 
-import java.util.Objects;
-
 public class Money implements Expression {
     protected int amount;
     protected String currency;
@@ -47,7 +45,9 @@ public class Money implements Expression {
     }
 
     @Override
-    public Money reduce(String toCurrency) {
-        return this;
+    public Money reduce(Bank bank, String toCurrency) {
+        int rate = bank.rate(this.currency(), toCurrency);
+        return new Money(amount / rate, toCurrency);
     }
+
 }

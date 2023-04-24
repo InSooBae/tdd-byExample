@@ -42,7 +42,12 @@ public class Money implements Expression {
                 '}';
     }
 
-    public Expression plus(Money money) {
-        return new Money(this.amount + money.amount, currency);
+    public Expression plus(Money addend) {
+        return new Sum(this, addend);
+    }
+
+    @Override
+    public Money reduce(String toCurrency) {
+        return this;
     }
 }

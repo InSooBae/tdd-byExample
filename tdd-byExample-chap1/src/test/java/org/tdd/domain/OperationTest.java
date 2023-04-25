@@ -38,7 +38,7 @@ public class OperationTest {
         Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
 
         Bank bank = new Bank();
-        Money reduced = bank.reduce(sum,"USD");
+        Money reduced = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(7), reduced);
     }
 
@@ -61,6 +61,7 @@ public class OperationTest {
     }
 
     @Test
+    @DisplayName("프랑 달러로 환전")
     public void testReduceMoneyDifferentCurrency() {
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);
@@ -69,7 +70,19 @@ public class OperationTest {
     }
 
     @Test
+    @DisplayName("같은 돈 환전시 같은 비율 리턴")
     public void testIdentityRate() {
         assertEquals(1, new Bank().rate("USD", "USD"));
+    }
+
+    @Test
+    @DisplayName("서로 다른 돈 합칠 때 환전 후 합치기")
+    public void testMixedAddition() {
+        Expression fiveBucks = Money.dollar(5);
+        Expression tenFranc = Money.franc(10);
+        Bank bank = new Bank();
+        bank.addRate("CHF", "USD", 2);
+        Money result = bank.reduce(fiveBucks.plus(tenFranc), "USD");
+        assertEquals(Money.dollar(10), result);
     }
 }

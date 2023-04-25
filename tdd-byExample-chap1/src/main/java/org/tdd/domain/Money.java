@@ -2,7 +2,7 @@ package org.tdd.domain;
 
 import java.util.Objects;
 
-public class Money implements Expression {
+public class Money extends Expression {
     protected int amount;
     protected String currency;
 
@@ -17,10 +17,6 @@ public class Money implements Expression {
 
     public static Money franc(int amount) {
         return new Money(amount, "CHF");
-    }
-
-    public Expression times(int multiplier) {
-        return new Money(amount * multiplier, currency);
     }
 
     public String currency() {
@@ -43,8 +39,9 @@ public class Money implements Expression {
                 '}';
     }
 
-    public Expression plus(Expression addend) {
-        return new Sum(this, addend);
+    @Override
+    public Expression times(int multiplier) {
+        return new Money(amount * multiplier, currency);
     }
 
     @Override

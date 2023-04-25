@@ -1,10 +1,12 @@
 package org.tdd.domain;
 
-public interface Expression {
+public abstract class Expression {
 
-    Money reduce(Bank bank, String toCurrency);
+    abstract public Money reduce(Bank bank, String toCurrency);
 
-    Expression plus(Expression addend);
+    public Expression plus(Expression addend) {
+        return new Sum(this, addend);
+    }
 
-    Expression times(int multiplier);
+    abstract public Expression times(int multiplier);
 }

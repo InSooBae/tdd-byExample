@@ -1,8 +1,8 @@
 package org.tdd.domain;
 
 public class Sum extends Expression {
-    Expression augend;
-    Expression addend;
+    private final Expression augend;
+    private final Expression addend;
 
     public Sum(Expression augend, Expression addend) {
         this.augend = augend;
@@ -18,4 +18,8 @@ public class Sum extends Expression {
     public Expression times(int multiplier) {
         return new Sum(augend.times(multiplier), addend.times(multiplier));
     }
+
+//    protected Expression temp() {
+//        return null;
+//    }
 }

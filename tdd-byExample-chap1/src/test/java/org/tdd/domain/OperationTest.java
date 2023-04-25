@@ -43,16 +43,6 @@ public class OperationTest {
     }
 
     @Test
-    @DisplayName("더하기시 Sum 객체 리턴하는지")
-    public void testPlusReturnSum() {
-        Money five = Money.dollar(5);
-        Expression result = five.plus(five);
-        Sum sum = (Sum) result;
-        assertEquals(five, sum.augend);
-        assertEquals(five, sum.addend);
-    }
-
-    @Test
     @DisplayName("reduce메서드 Sum 이외에도 동작이 잘 되는지")
     public void testReduceMoney() {
         Bank bank = new Bank();

@@ -3,8 +3,8 @@ package org.tdd.domain;
 import java.util.Objects;
 
 public class Money extends Expression {
-    protected int amount;
-    protected String currency;
+    protected final int amount;
+    protected final String currency;
 
     public Money(int amount, String currency) {
         this.amount = amount;

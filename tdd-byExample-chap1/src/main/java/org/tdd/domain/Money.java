@@ -4,7 +4,7 @@ import java.util.Objects;
 
 public class Money extends Expression {
     protected final int amount;
-    protected final String currency;
+    protected String currency;
 
     public Money(int amount, String currency) {
         this.amount = amount;

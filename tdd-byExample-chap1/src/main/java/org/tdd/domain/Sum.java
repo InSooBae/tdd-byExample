@@ -18,8 +18,4 @@ public class Sum extends Expression {
     public Expression times(int multiplier) {
         return new Sum(augend.times(multiplier), addend.times(multiplier));
     }
-
-//    protected Expression temp() {
-//        return null;
-//    }
 }

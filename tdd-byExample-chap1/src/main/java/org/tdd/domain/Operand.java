@@ -1,10 +1,13 @@
 package org.tdd.domain;
 
-public class Sum extends Expression {
+import java.util.LinkedList;
+import java.util.List;
+
+public class Operand extends Expression {
     private final Expression augend;
     private final Expression addend;
 
-    public Sum(Expression augend, Expression addend) {
+    public Operand(Expression augend, Expression addend) {
         this.augend = augend;
         this.addend = addend;
     }
@@ -16,6 +19,6 @@ public class Sum extends Expression {
 
     @Override
     public Expression times(int multiplier) {
-        return new Sum(augend.times(multiplier), addend.times(multiplier));
+        return new Operand(augend.times(multiplier), addend.times(multiplier));
     }
 }

@@ -35,7 +35,7 @@ public class OperationTest {
     @Test
     @DisplayName("$5 + $5 = $10")
     public void testSimpleAddition() {
-        Expression sum = new Sum(Money.dollar(3), Money.dollar(4));
+        Expression sum = new Operand(Money.dollar(3), Money.dollar(4));
 
         Bank bank = new Bank();
         Money reduced = bank.reduce(sum, "USD");
@@ -83,7 +83,7 @@ public class OperationTest {
         Expression tenFrancs = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);
-        Expression sum = new Sum(fiveBucks, tenFrancs).plus(fiveBucks);
+        Expression sum = new Operand(fiveBucks, tenFrancs).plus(fiveBucks);
         Money result = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(15), result);
     }
@@ -95,15 +95,23 @@ public class OperationTest {
         Expression tenFranc = Money.franc(10);
         Bank bank = new Bank();
         bank.addRate("CHF", "USD", 2);
-        Expression sum = new Sum(fiveBucks, tenFranc).times(2);
+        Expression sum = new Operand(fiveBucks, tenFranc).times(2);
         Money result = bank.reduce(sum, "USD");
         assertEquals(Money.dollar(20), result);
     }
 
-//    @Test
-//    @DisplayName("같은 통화면 Money 리턴 -> instanceOf로 Money인지 확인 후 해당 currency가 같은지 비교해야함 -> 리팩토링시 다시 Dollar와 Franc의 분리로 이어질 듯 한데 현재는 무엇이 최선인지 모르겠다.")
-//    public void testPlusSSameCurrencyReturnMoney() {
+    @Test
+    @DisplayName("같은 통화면 Money 리턴 -> 결국 외부 객체가 처리해야 편하지 않을까?")
+    public void testPlusSSameCurrencyReturnMoney() {
+        Money dollar = Money.dollar(1);
+        Money dollar2 = Money.dollar(2);
 //        Expression sum = Money.dollar(1).plus(Money.dollar(1));
-//        assertTrue(sum instanceof Money);
-//    }
+        Bank bank = new Bank();
+        Expression sum = dollar.plus(dollar2);
+        boolean equals = dollar.currency().equals(dollar2.currency());
+        if (equals) {
+            sum = sum.reduce(bank, dollar.currency());
+        }
+        assertTrue(sum instanceof Money);
+    }
 }

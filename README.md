@@ -4,9 +4,9 @@ Test-Driven Development By Example
 ## Dollar 예제 (설계 부분)
 
 <div>
-  <img src = "https://user-images.githubusercontent.com/48831854/235196253-a6d7385c-6940-4cbc-9eaa-3fcb4ebf7c25.png" width="33%" height="33%">
-  <img src = "https://user-images.githubusercontent.com/48831854/235208515-6a59c6ce-2cf2-412b-b846-920c5615a319.png" width="33%" height="33%">
-  <img src = "https://user-images.githubusercontent.com/48831854/235208818-3d007b19-fb26-48fe-b5de-5dba22c0f649.png" width="33%" height="33%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235196253-a6d7385c-6940-4cbc-9eaa-3fcb4ebf7c25.png" width="30%" height="30%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235208515-6a59c6ce-2cf2-412b-b846-920c5615a319.png" width="30%" height="30%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235208818-3d007b19-fb26-48fe-b5de-5dba22c0f649.png" width="30%" height="30%">
 </div>
 
 <br/>

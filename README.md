@@ -4,9 +4,9 @@ Test-Driven Development By Example
 ## Dollar 예제 (설계 부분)
 
 <div>
-  <img src = "https://user-images.githubusercontent.com/48831854/235196253-a6d7385c-6940-4cbc-9eaa-3fcb4ebf7c25.png" width="30%" height="30%">
-  <img src = "https://user-images.githubusercontent.com/48831854/235208515-6a59c6ce-2cf2-412b-b846-920c5615a319.png" width="30%" height="30%">
-  <img src = "https://user-images.githubusercontent.com/48831854/235208818-3d007b19-fb26-48fe-b5de-5dba22c0f649.png" width="30%" height="30%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235196253-a6d7385c-6940-4cbc-9eaa-3fcb4ebf7c25.png" width="33%" height="33%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235208515-6a59c6ce-2cf2-412b-b846-920c5615a319.png" width="33%" height="33%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235208818-3d007b19-fb26-48fe-b5de-5dba22c0f649.png" width="33%" height="33%">
 </div>
 
 <br/>
@@ -18,7 +18,7 @@ Test-Driven Development By Example
 <br/>
 
 <div style="">
-  <img src = "https://user-images.githubusercontent.com/48831854/235205486-bd3c1ff7-d40e-4e17-8c52-c2b8aa661b06.png" width="30%" height="30%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235205486-bd3c1ff7-d40e-4e17-8c52-c2b8aa661b06.png" width="40%" height="40%">
   <img src = "https://user-images.githubusercontent.com/48831854/235208971-8a98a4f4-7390-44be-83b9-a1d1bf64b0c9.png" width="50%" height="50%">
 </div>
 
@@ -29,7 +29,7 @@ Test-Driven Development By Example
 <br/>
 
 <div>
-  <img src = "https://user-images.githubusercontent.com/48831854/235214642-25b5d53f-f569-4251-a3b8-c5186d9fe065.png" width="30%" height="30%">
+  <img src = "https://user-images.githubusercontent.com/48831854/235214642-25b5d53f-f569-4251-a3b8-c5186d9fe065.png" width="49%" height="49%">
   <img src = "https://user-images.githubusercontent.com/48831854/235209224-5f9a8d91-2dd6-4827-bebb-829389a23159.png" width="50%" height="50%">
 </div>
 
